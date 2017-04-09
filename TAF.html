@@ -26,9 +26,10 @@
 	var date = "";
 	var meet = "";
 	var toggle = 0;
+	var count = 0;
 	function getTemplateRow() {
 		var a = document.getElementById("tRow").cloneNode(true);
-		a.id = "";
+		a.id = "tRow";
 		a.style.display = "";
 		a.innerHTML = a.innerHTML.replace(/{id}/, ++maxID);
 		return a;
@@ -64,15 +65,21 @@
 	    var x = num.parentNode.parentNode.rowIndex;
 	    document.getElementById("athletes").deleteRow(x);
 	}
+	function deleteCol(){
+	    var row = document.getElementById("heading");
+	    var row2 = document.getElementById("tRow");
+	    row.deleteCell(0);
+	    row2.deleteCell(0);
+	}
 	</script>
 	
   </head>
 
   <body>
           <h1 class="page-header">Athlete Database</h1>
-			<table id="athletes">
+	    <table id="athletes">
               <thead>
-                <tr>
+                <tr id="heading">
                   <th>#</th>
                   <th>Athlete Name</th>
 		  <th>Athletes Coach</th>
@@ -92,8 +99,11 @@
                 </tr>
             </table>
 			
-			<button onclick="addRow();">Add row</button>
-			<button onclick="editRow();">Edit</button>
+	    <button onclick="addRow();">Add row</button>
+	    <button onclick="editRow();">Edit</button>
+	    <button onclick="deleteCol();">Delete Col</button>
+
+	    <input type ="checkbox" id="check1" onchange="this.deleteCol(2);">
 
   </body>
 </html>
