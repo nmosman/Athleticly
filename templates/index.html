@@ -109,9 +109,11 @@
 	    	  <div class="modal-dialog">
 					<div class="loginmodal-container">
 						<h1>Administrator Login</h1><br>
-				  <form method = "POST">
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
+				  <form method = "post" action = "/admin_login">
+					<input type="text" name="AdminId" placeholder="AdminId" value="{{
+          request.form.AdminId }}">
+					<input type="password" name="Password" placeholder="Password" value="{{
+          request.form.Password }}">
 					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
 				  </form>
 					
@@ -127,9 +129,11 @@
 	    	  <div class="modal-dialog">
 					<div class="loginmodal-container">
 						<h1>Coach Login</h1><br>
-				  <form method = "POST">
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
+				  <form method = "post" action = "/coach_login" >
+					<input type="text" name="CoachId" placeholder="CoachId" value="{{
+          request.form.CoachId }}">
+					<input type="password" name="Password" placeholder="Password" value="{{
+          request.form.Password }}">
 					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
 				  </form>
 					
@@ -145,9 +149,11 @@
 	    	  <div class="modal-dialog">
 					<div class="loginmodal-container">
 						<h1>Athlete Login</h1><br>
-				  <form>
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
+				  <form action = "/athlete_login" method = "post">
+					<input type="text" name="AthleteId" placeholder="AthleteId" value="{{
+          request.form.AthleteId }}">
+					<input type="password" name="Password" placeholder="Password" value="{{
+          request.form.password }}">
 					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
 				  </form>
 					
